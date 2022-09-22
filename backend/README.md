@@ -46,7 +46,7 @@ Type (on your terminal) `npm init` and fill in all required details. This will c
 
 The next step is to install a dependency we will need for sending the firebase notification, install the dependency by running `npm i firebase-admin` on your terminal. You can find the dependency details [here](https://www.npmjs.com/package/firebase-admin).
 
-Also, run the following commands to install dependencies we will need for our nodeJS express server to run and parse JSON bodies without errors. `npm i express`.
+Also, run the following commands to install dependencies we will need for our nodeJS express server to run and parse JSON bodies without errors. `npm i express` and `npm i cors`.
 
 Now we are good with the dependencies. Within the same directory, create a config file, that we will use to initialize firebase in our app. Your code will look like this
 
