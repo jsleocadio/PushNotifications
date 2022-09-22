@@ -1,0 +1,24 @@
+{
+  "name": "fcmserver",
+  "version": "1.0.0",
+  "description": "A NodeJS server with Firebase-admin",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jsleocadio/PushNotifications.git"
+  },
+  "author": "Jefferson Leocadio",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jsleocadio/PushNotifications/issues"
+  },
+  "homepage": "https://github.com/jsleocadio/PushNotifications#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "firebase-admin": "^11.0.1"
+  }
+}
