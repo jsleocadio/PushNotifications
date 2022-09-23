@@ -9,11 +9,13 @@
 <ion-content class="ion-padding">
   <form (ngSubmit)="send()" [formGroup]="notification">
     <ion-item fill="solid" class="ion-margin-bottom">
-      <ion-input type="text" placeholder="Título da mensagem" formControlName="title"></ion-input>
+      <ion-label position="floating">Título da mensagem</ion-label>
+      <ion-input type="text" formControlName="title"></ion-input>
       <ion-note slot="error" *ngIf="(title.dirty || title.touched) && title.errors">Título da mensagem requerido</ion-note>
     </ion-item>
     <ion-item fill="solid" class="ion-margin-bottom">
-      <ion-input type="text" placeholder="Corpo da mensagem" formControlName="body"></ion-input>
+      <ion-label position="floating">Corpo da mensagem</ion-label>
+      <ion-textarea type="text" formControlName="body" autoGrow="true"></ion-textarea>
       <ion-note slot="error" *ngIf="(body.dirty || body.touched) && body.errors">Corpo da mensagem requerido</ion-note>
     </ion-item>
     <ion-button type="submit" expand="block" [disabled]="!notification.value">Enviar mensagem</ion-button>
