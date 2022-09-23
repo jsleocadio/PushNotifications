@@ -10,7 +10,7 @@ export class MessagingService {
   .set('Accept', 'application/json');
   protected url = 'http://localhost:3000/notification/device';
 
-  registrationToken = "cvqXy1Cn_r564FbS45HUdW:APA91bGlNtaYMTLSGzkKyOHHyD6TwuKvvK7X3VrlPcMsTVB0EMBoysB7pJov6Oz0nszdbhJeCP4m1JoRyZk21hzXTZQsrYIiJ0zYwEVirMA7NLKTEZBpyvAtyU66FbdTxzKA_Qva3s5-";
+  registrationToken = " ";
 
   constructor(private http: HttpClient) { }
 
