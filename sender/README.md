@@ -1,5 +1,3 @@
-# FCM (Firebase Cloud Messages)
-
 # Iniciando o Web App Ionic
 
 Usando o Servidor NodeJS para enviar Web Push e Push Notifications
