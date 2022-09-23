@@ -1,16 +1,15 @@
 const express = require('express')
-const bodyparser = require('body-parser')
 const admin = require('./firebase-config')
 const cors = require('cors')
 
-const corsOptions ={
-    origin:'http://localhost:3000', 
+const corsOptions = {
+    origin:'http://localhost:8100', 
     credentials:true,            //access-control-allow-credentials:true
     optionSuccessStatus:200
 }
 
 const app = express()
-app.use(bodyparser.json())
+app.use(express.json())
 app.use(cors(corsOptions))
 
 const port = 3000

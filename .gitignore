@@ -16,6 +16,23 @@ $RECYCLE.BIN/
 *.log
 log.txt
 npm-debug.log*
+
+# Sender
+/sender/.angular
+/sender/.idea
+/sender/.ionic
+/sender/.sass-cache
+/sender/.sourcemaps
+/sender/.versions
+/sender/.vscode
+/sender/coverage
+/sender/dist
+/sender/node_modules
+/sender/platforms
+/sender/plugins
+/sender/www
+
+# Back-end
 /backend/node_modules
 /backend/config.json
 
