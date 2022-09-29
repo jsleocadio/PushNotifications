@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { getToken, Messaging, onMessage } from '@angular/fire/messaging';
 import { environment } from 'src/environments/environment';
+import { TokenService } from '../services/token.service';
 
 @Component({
   selector: 'app-home',
@@ -11,7 +12,7 @@ export class HomePage implements OnInit {
 
   message: any = null;
 
-  constructor(private afm: Messaging) {}
+  constructor(private afm: Messaging, private ts: TokenService) {}
 
   ngOnInit(): void {
       this.requestPermission();
@@ -23,7 +24,14 @@ export class HomePage implements OnInit {
       .then(
         (currentToken) => {
           if (currentToken) {
-            console.log(currentToken);
+            this.ts.tokenRegistration(currentToken)
+            .subscribe(
+              (res) => {
+                console.log(res); 
+              }, (error) => {
+                console.log("Requisição falhou!", error);
+              }
+            )
           } else {
             console.log('Não há token disponível. Solicite a geração!.');
           }

@@ -10,13 +10,10 @@ export class MessagingService {
   .set('Accept', 'application/json');
   protected url = 'http://localhost:3000/notification/device';
 
-  registrationToken = "";
-
   constructor(private http: HttpClient) { }
 
   sendMessage({ title, body }) {
     let data = {
-      "registrationToken": this.registrationToken,
       "message": 
       {
         "notification": 
