@@ -14,6 +14,8 @@ const app = express()
 app.use(express.json())
 app.use(cors(corsOptions))
 
+const db = admin.admin.firestore()
+
 const port = 3000
 const notification_options = {
     priority: "high",
@@ -26,7 +28,7 @@ app.post('/notification/device', (req, res) => {
     tokensRef.get().then(snapshot => {
         snapshot.forEach(doc => {
             admin.admin.messaging().sendToDevice(doc.data().token, message, options)
-            .then(responde => {
+            .then(response => {
                 res.status(200).send("Notificação enviada com sucesso!")
             })
             .catch(error => {
