@@ -25,13 +25,11 @@ export class HomePage implements OnInit {
         (currentToken) => {
           if (currentToken) {
             this.ts.tokenRegistration(currentToken)
-            .subscribe(
-              (res) => {
-                console.log(res); 
-              }, (error) => {
-                console.log("Requisição falhou!", error);
-              }
-            )
+            .subscribe((res) => {
+              console.log(res);
+            }, (error) => {
+              console.log("Requisição falhou", error);
+            })
           } else {
             console.log('Não há token disponível. Solicite a geração!.');
           }

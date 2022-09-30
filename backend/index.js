@@ -2,6 +2,8 @@ const express = require('express')
 const admin = require('./firebase-config')
 const cors = require('cors')
 
+const db = admin.admin.firestore()
+
 const corsOptions = {
     origin:'http://localhost:8100', 
     credentials:true,            //access-control-allow-credentials:true
@@ -40,8 +42,7 @@ app.post('/registration', (req, res) => {
     const token = req.body.token
     const tokensRef = db.collection('tokens')
     const queryRef = tokensRef.where('token', '==', token)
-    queryRef.get()
-    .then(response => {
+    queryRef.get().then(response => {
         if (response.size != 0) {
             res.status(200).send("Token já cadastrado!")
         } else {

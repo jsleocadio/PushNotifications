@@ -6,14 +6,14 @@ import { Injectable } from '@angular/core';
 })
 export class TokenService {
 
-  protected header = new HttpHeaders()
+  protected headers = new HttpHeaders()
   .set('Accept', 'application/json');
-  protected url = 'http://localhost:3000/registration';
+  protected url = 'http://localhost:3000/registration'
 
   constructor(private http: HttpClient) { }
 
   tokenRegistration(token: string) {
-    let data = { "token": token };
-    return this.http.post(this.url, data, { headers: this.header, responseType: "text" });
+    let data = { "token": token }
+    return this.http.post(this.url, data, { headers: this.headers, responseType: 'text' });
   }
 }
