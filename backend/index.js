@@ -34,8 +34,6 @@ app.post('/notification/device', (req, res) => {
             })
         })
     })
-
-    
 })
 
 app.post('/registration', (req, res) => {
