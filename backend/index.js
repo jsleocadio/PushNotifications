@@ -2,8 +2,6 @@ const express = require('express')
 const admin = require('./firebase-config')
 const cors = require('cors')
 
-const db = admin.admin.firestore()
-
 const corsOptions = {
     origin:'http://localhost:8100', 
     credentials:true,            //access-control-allow-credentials:true
