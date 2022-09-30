@@ -4,25 +4,16 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
-export class MessagingService {
+export class TokenService {
 
   protected headers = new HttpHeaders()
   .set('Accept', 'application/json');
-  protected url = 'http://localhost:3000/notification/device';
+  protected url = 'http://localhost:3000/registration'
 
   constructor(private http: HttpClient) { }
 
-  sendMessage({ title, body }) {
-    let data = {
-      "message": 
-      {
-        "notification": 
-        {
-          "title": title,
-          "body": body,
-        }
-      }
-    };
+  tokenRegistration(token: string) {
+    let data = { "token": token }
     return this.http.post(this.url, data, { headers: this.headers, responseType: 'text' });
   }
 }
